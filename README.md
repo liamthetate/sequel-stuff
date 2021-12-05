@@ -2,9 +2,6 @@
 
 Welcome! [tea&cheese](https://www.teaandcheese.com)
 
-
-
-
 ## h2
 
 ### h3
