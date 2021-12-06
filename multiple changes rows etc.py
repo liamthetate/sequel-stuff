@@ -14,9 +14,11 @@ connection = pymysql.connect(host='localhost',
 
 try:
     with connection.cursor() as cursor:
-        cursor.execute("UPDATE Friends
-                            SET age = 22
-                            WHERE Name = "Bob";")
+        rows = [("Bob", 21, "1990-02-06 23:04:56"),
+               ("Prick", 2, "1991-03-07 23:04:56"),
+               ("Knob", 1, "1992-04-08 23:04:56"),
+               ("Fag", 210, "1993-05-09 23:04:56")]
+        cursor.executemany("INSERT INTO Friends VALUES (%s, %s, %s);", rows)
         connection.commit()
 finally:
     connection.close()
